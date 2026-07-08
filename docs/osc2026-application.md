@@ -1,8 +1,8 @@
 # Moon Sketch Kit 项目申报书
 
 - 项目名称：Moon Sketch Kit
-- GitHub 仓库链接：上传后填写 `https://github.com/cauchyQ/moon-sketch-kit`
-- GitLink 仓库链接：上传后填写 `https://www.gitlink.org.cn/cauchyQ/moon-sketch-kit`
+- GitHub 仓库链接：`https://github.com/cauchyQ/moon-sketch-kit`
+- GitLink 仓库链接：`https://www.gitlink.org.cn/cauchyQ/moon-sketch-kit`
 - 项目方向：MoonBit 流式近似分析基础库 / 简易图表数据生成和预览
 - 项目性质：原创项目
 
