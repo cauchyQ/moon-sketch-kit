@@ -1,0 +1,1 @@
+login:12 view:7 checkout:3 refund:1 support:2

@@ -1,0 +1,7 @@
+import {
+  "sketchkit/moon-sketch-kit" @sketch,
+}
+
+options(
+  "is-main": true,
+)
