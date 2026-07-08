@@ -1,0 +1,493 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "sketchkit/moon-sketch-kit"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn bloom_add(BloomFilter, String) -> BloomFilter
+
+pub fn bloom_add_many(BloomFilter, Array[String]) -> BloomFilter
+
+pub fn bloom_from_items(Array[String], Int, Int) -> BloomFilter
+
+pub fn bloom_json(BloomFilter) -> String
+
+pub fn bloom_markdown(BloomFilter, Array[String]) -> String
+
+pub fn bloom_might_contain(BloomFilter, String) -> Bool
+
+pub fn bloom_new(Int, Int) -> BloomFilter
+
+pub fn bloom_set_bits(BloomFilter) -> Int
+
+pub fn bloom_stats(BloomFilter) -> BloomStats
+
+pub fn count_min_add(CountMinSketch, String) -> CountMinSketch
+
+pub fn count_min_add_count(CountMinSketch, String, Int) -> CountMinSketch
+
+pub fn count_min_error_markdown(CountMinErrorReport) -> String
+
+pub fn count_min_error_report(Array[String], Array[String], Int, Int) -> CountMinErrorReport
+
+pub fn count_min_estimate(CountMinSketch, String) -> Int
+
+pub fn count_min_from_items(Array[String], Int, Int) -> CountMinSketch
+
+pub fn count_min_new(Int, Int) -> CountMinSketch
+
+pub fn count_min_summary_markdown(CountMinSketch, Array[String]) -> String
+
+pub fn evaluate_stream_gate(String, String, String, String, SketchQualityPolicy) -> SketchGateReport
+
+pub fn evaluate_stream_gate_default(String, String) -> SketchGateReport
+
+pub fn exact_counter_add(ExactCounter, String) -> ExactCounter
+
+pub fn exact_counter_count(ExactCounter, String) -> Int
+
+pub fn exact_counter_from_items(Array[String]) -> ExactCounter
+
+pub fn exact_counter_markdown(ExactCounter, Int) -> String
+
+pub fn exact_counter_new() -> ExactCounter
+
+pub fn exact_counter_topk(ExactCounter, Int) -> Array[TopKItem]
+
+pub fn exact_counter_unique(ExactCounter) -> Int
+
+pub fn exact_jaccard(Array[String], Array[String]) -> Double
+
+pub fn histogram_add(IntHistogram, Int) -> IntHistogram
+
+pub fn histogram_approx_percentile(IntHistogram, Int) -> Int?
+
+pub fn histogram_bucket_width(IntHistogram) -> Int
+
+pub fn histogram_buckets(IntHistogram) -> Array[HistogramBucket]
+
+pub fn histogram_from_text(String, Int, Int, Int) -> IntHistogram
+
+pub fn histogram_from_values(Array[Int], Int, Int, Int) -> IntHistogram
+
+pub fn histogram_index(IntHistogram, Int) -> Int
+
+pub fn histogram_json(IntHistogram) -> String
+
+pub fn histogram_markdown(IntHistogram) -> String
+
+pub fn histogram_new(Int, Int, Int) -> IntHistogram
+
+pub fn histogram_stats(IntHistogram) -> HistogramStats
+
+pub fn hll_add(HyperLogLogLite, String) -> HyperLogLogLite
+
+pub fn hll_estimate(HyperLogLogLite) -> Double
+
+pub fn hll_from_items(Array[String], Int) -> HyperLogLogLite
+
+pub fn hll_new(Int) -> HyperLogLogLite
+
+pub fn jaccard_report(String, String) -> String
+
+pub fn minhash_add(MinHashSignature, String) -> MinHashSignature
+
+pub fn minhash_from_items(Array[String], Int) -> MinHashSignature
+
+pub fn minhash_new(Int) -> MinHashSignature
+
+pub fn minhash_similarity(MinHashSignature, MinHashSignature) -> Double
+
+pub fn numeric_summary(QuantileSummary) -> NumericSummary
+
+pub fn numeric_summary_json(QuantileSummary) -> String
+
+pub fn numeric_summary_markdown(QuantileSummary) -> String
+
+pub fn parse_event_windows(String) -> Array[EventWindow]
+
+pub fn parse_events(String) -> Array[String]
+
+pub fn parse_weighted_events(String) -> Array[WeightedEvent]
+
+pub fn parse_weighted_token(String) -> WeightedEvent?
+
+pub fn quantile_add(QuantileSummary, Int) -> QuantileSummary
+
+pub fn quantile_compare_markdown(QuantileSummary, QuantileSummary) -> String
+
+pub fn quantile_from_text(String) -> QuantileSummary
+
+pub fn quantile_from_values(Array[Int]) -> QuantileSummary
+
+pub fn quantile_new() -> QuantileSummary
+
+pub fn quantile_sorted(QuantileSummary) -> QuantileSummary
+
+pub fn quantile_value(QuantileSummary, Int) -> Int?
+
+pub fn recommendations_from_gate(SketchGateReport) -> Array[SketchRecommendation]
+
+pub fn recommendations_from_weighted(WeightedStreamSummary) -> Array[SketchRecommendation]
+
+pub fn recommendations_from_windowed(WindowedStreamReport) -> Array[SketchRecommendation]
+
+pub fn recommendations_json(Array[SketchRecommendation]) -> String
+
+pub fn recommendations_markdown(Array[SketchRecommendation]) -> String
+
+pub fn reservoir_add(ReservoirSampler, String) -> ReservoirSampler
+
+pub fn reservoir_from_items(Array[String], Int) -> ReservoirSampler
+
+pub fn reservoir_markdown(ReservoirSampler) -> String
+
+pub fn reservoir_new(Int) -> ReservoirSampler
+
+pub fn sketch_budget_from_text(String, Int) -> SketchBudgetPlan
+
+pub fn sketch_budget_json(SketchBudgetPlan) -> String
+
+pub fn sketch_budget_markdown(SketchBudgetPlan) -> String
+
+pub fn sketch_budget_plan(Int, Int, Int) -> SketchBudgetPlan
+
+pub fn sketch_budget_recommendations(SketchBudgetPlan) -> Array[SketchRecommendation]
+
+pub fn sketch_gate_issue(String, String, String, String) -> SketchGateIssue
+
+pub fn sketch_gate_json(SketchGateReport) -> String
+
+pub fn sketch_gate_markdown(SketchGateReport) -> String
+
+pub fn sketch_hash(String, Int) -> Int
+
+pub fn sketch_quality_policy_default() -> SketchQualityPolicy
+
+pub fn sketch_quality_policy_strict() -> SketchQualityPolicy
+
+pub fn sketch_recommendation(String, String, String, String, String) -> SketchRecommendation
+
+pub fn sketch_report(Array[String], Int, Int) -> SketchReport
+
+pub fn sketch_report_json(String) -> String
+
+pub fn sketch_report_markdown(String) -> String
+
+pub fn stream_drift(String, String, String, String) -> StreamDrift
+
+pub fn stream_drift_json(String, String, String, String) -> String
+
+pub fn stream_drift_markdown(String, String, String, String) -> String
+
+pub fn stream_snapshot(String, String) -> StreamSnapshot
+
+pub fn stream_snapshot_json(StreamSnapshot) -> String
+
+pub fn stream_snapshot_markdown(StreamSnapshot) -> String
+
+pub fn token_profile(Array[String], Int) -> TokenProfile
+
+pub fn token_profile_from_text(String, Int) -> TokenProfile
+
+pub fn token_profile_json(TokenProfile) -> String
+
+pub fn token_profile_markdown(TokenProfile) -> String
+
+pub fn token_profile_recommendations(TokenProfile) -> Array[SketchRecommendation]
+
+pub fn topk_add(SpaceSavingTopK, String) -> SpaceSavingTopK
+
+pub fn topk_from_items(Array[String], Int) -> SpaceSavingTopK
+
+pub fn topk_markdown(SpaceSavingTopK) -> String
+
+pub fn topk_new(Int) -> SpaceSavingTopK
+
+pub fn weighted_compare_markdown(WeightedStreamSummary, WeightedStreamSummary) -> String
+
+pub fn weighted_estimate(WeightedStreamSummary, String) -> Int
+
+pub fn weighted_event(String, Int) -> WeightedEvent
+
+pub fn weighted_summary(Array[WeightedEvent], Int, Int, Int) -> WeightedStreamSummary
+
+pub fn weighted_summary_from_text(String) -> WeightedStreamSummary
+
+pub fn weighted_summary_json(WeightedStreamSummary) -> String
+
+pub fn weighted_summary_markdown(WeightedStreamSummary) -> String
+
+pub fn window_change(WindowSnapshot, WindowSnapshot) -> WindowChange
+
+pub fn window_snapshot(EventWindow) -> WindowSnapshot
+
+pub fn windowed_report(Array[EventWindow]) -> WindowedStreamReport
+
+pub fn windowed_report_from_text(String) -> WindowedStreamReport
+
+pub fn windowed_report_json(WindowedStreamReport) -> String
+
+pub fn windowed_report_markdown(WindowedStreamReport) -> String
+
+pub fn windowed_topk_timeline_markdown(WindowedStreamReport) -> String
+
+// Errors
+
+// Types and methods
+pub(all) struct BloomFilter {
+  size : Int
+  hashes : Int
+  inserted : Int
+  bits : Array[Bool]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct BloomStats {
+  size : Int
+  hashes : Int
+  inserted : Int
+  set_bits : Int
+  fill_ratio : Double
+  estimated_false_positive_rate : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CountMinError {
+  key : String
+  exact : Int
+  estimated : Int
+  overestimate : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CountMinErrorReport {
+  total : Int
+  max_overestimate : Int
+  average_overestimate : Double
+  rows : Array[CountMinError]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CountMinSketch {
+  width : Int
+  depth : Int
+  total : Int
+  cells : Array[Int]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct EventWindow {
+  index : Int
+  label : String
+  events : Array[String]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ExactCounter {
+  keys : Array[String]
+  counts : Array[Int]
+  total : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct HistogramBucket {
+  index : Int
+  start : Int
+  end : Int
+  count : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct HistogramStats {
+  total : Int
+  underflow : Int
+  overflow : Int
+  non_empty_buckets : Int
+  mode_bucket : Int
+  mode_count : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct HyperLogLogLite {
+  buckets : Int
+  registers : Array[Int]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct IntHistogram {
+  min : Int
+  max : Int
+  buckets : Int
+  counts : Array[Int]
+  underflow : Int
+  overflow : Int
+  total : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct MinHashSignature {
+  seeds : Int
+  values : Array[Int]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct NumericSummary {
+  count : Int
+  min : Int?
+  max : Int?
+  sum : Int
+  mean : Double?
+  p50 : Int?
+  p90 : Int?
+  p99 : Int?
+} derive(Eq, @debug.Debug)
+
+pub(all) struct QuantileSummary {
+  values : Array[Int]
+  sorted : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ReservoirSampler {
+  capacity : Int
+  seen : Int
+  samples : Array[String]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SketchBudgetPlan {
+  expected_events : Int
+  expected_unique : Int
+  accuracy_level : Int
+  count_min_width : Int
+  count_min_depth : Int
+  bloom_bits : Int
+  bloom_hashes : Int
+  hll_buckets : Int
+  topk_capacity : Int
+  reservoir_size : Int
+  estimated_cells : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SketchGateIssue {
+  severity : String
+  rule : String
+  metric : String
+  message : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SketchGateReport {
+  passed : Bool
+  policy : SketchQualityPolicy
+  drift : StreamDrift
+  issues : Array[SketchGateIssue]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SketchQualityPolicy {
+  max_event_delta : Int
+  max_unique_delta : Int
+  min_top_overlap : Double
+  min_minhash_similarity : Double
+  max_bloom_false_positive_rate : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SketchRecommendation {
+  severity : String
+  code : String
+  title : String
+  detail : String
+  action : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SketchReport {
+  item_count : Int
+  unique_count : Int
+  hll_estimate : Double
+  topk : SpaceSavingTopK
+  sampler : ReservoirSampler
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SpaceSavingTopK {
+  capacity : Int
+  total : Int
+  items : Array[TopKItem]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct StreamDrift {
+  baseline : StreamSnapshot
+  candidate : StreamSnapshot
+  event_delta : Int
+  unique_delta : Int
+  top_overlap : Double
+  minhash_similarity : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct StreamSnapshot {
+  name : String
+  events : Int
+  exact_unique : Int
+  hll_unique : Double
+  topk : Array[TopKItem]
+  sample : Array[String]
+  bloom : BloomStats
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TokenProfile {
+  total : Int
+  unique : Int
+  numeric : Int
+  alphabetic : Int
+  alphanumeric : Int
+  mixed : Int
+  min_length : Int
+  max_length : Int
+  average_length : Double
+  length_histogram : IntHistogram
+  prefix_topk : Array[TopKItem]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct TopKItem {
+  key : String
+  count : Int
+  error : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WeightedEvent {
+  key : String
+  weight : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WeightedStreamSummary {
+  event_rows : Int
+  total_weight : Int
+  unique_keys : Int
+  count_min : CountMinSketch
+  exact : ExactCounter
+  topk : Array[TopKItem]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WindowChange {
+  index : Int
+  previous_label : String
+  current_label : String
+  event_delta : Int
+  unique_delta : Int
+  top_overlap : Double
+  minhash_similarity : Double
+  dominant_key : String
+  dominant_count : Int
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WindowSnapshot {
+  index : Int
+  label : String
+  events : Int
+  exact_unique : Int
+  hll_unique : Double
+  bloom_false_positive_rate : Double
+  dominant_key : String
+  dominant_count : Int
+  topk : Array[TopKItem]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct WindowedStreamReport {
+  windows : Array[WindowSnapshot]
+  changes : Array[WindowChange]
+  total_events : Int
+  max_event_spike : Int
+  min_similarity : Double
+} derive(Eq, @debug.Debug)
+
+// Type aliases
+
+// Traits
+
