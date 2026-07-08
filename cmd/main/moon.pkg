@@ -1,0 +1,9 @@
+import {
+  "sketchkit/moon-sketch-kit" @sketch,
+  "moonbitlang/core/env",
+  "moonbitlang/core/string",
+}
+
+options(
+  "is-main": true,
+)
