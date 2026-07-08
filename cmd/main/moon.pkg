@@ -1,5 +1,5 @@
 import {
-  "sketchkit/moon-sketch-kit" @sketch,
+  "cauchyQ/moon-sketch-kit" @sketch,
   "moonbitlang/core/env",
   "moonbitlang/core/string",
 }

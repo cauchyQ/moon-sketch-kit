@@ -9,7 +9,7 @@
 //   "moonbitlang/x@0.4.6",
 // }
 
-name = "sketchkit/moon-sketch-kit"
+name = "cauchyQ/moon-sketch-kit"
 
 version = "0.1.0"
 
