@@ -6,7 +6,7 @@
 - mooncakes.io 发布包：`cauchyQ/moon-sketch-kit`，版本 `0.1.0`
 - 项目方向：MoonBit 流式近似分析基础库 / 简易图表数据生成和预览
 - 项目性质：原创项目
-- 当前状态：13 条有效提交，GitHub Actions CI 通过，核心测试 42 项通过
+- 当前状态：14 条有效提交，GitHub Actions CI 通过，核心测试 42 项通过
 
 ## 项目简介
 
