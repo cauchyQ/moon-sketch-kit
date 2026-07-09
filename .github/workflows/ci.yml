@@ -7,12 +7,71 @@ on:
   workflow_dispatch:
 
 jobs:
+  acceptance:
+    name: MoonBit pre-acceptance gate
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Install MoonBit
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+
+      - name: Show toolchain
+        run: moon version --all
+
+      - name: Update dependencies
+        run: moon update
+
+      - name: moon check
+        run: moon check
+
+      - name: moon fmt --deny-warn
+        shell: bash
+        run: |
+          if moon fmt --deny-warn; then
+            exit 0
+          fi
+          status=$?
+          if moon fmt --help | grep -q -- '--deny-warn'; then
+            exit "$status"
+          fi
+          echo "::warning::moon fmt --deny-warn is not supported by this MoonBit CLI; falling back to moon fmt --check."
+          moon fmt --check
+
+      - name: moon info --deny-warn
+        shell: bash
+        run: |
+          if moon info --deny-warn; then
+            git diff --exit-code
+            exit 0
+          fi
+          status=$?
+          if moon info --help | grep -q -- '--deny-warn'; then
+            exit "$status"
+          fi
+          echo "::warning::moon info --deny-warn is not supported by this MoonBit CLI; falling back to moon info plus git diff."
+          moon info
+          git diff --exit-code
+
+      - name: moon test
+        run: moon test
+
   moonbit:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          persist-credentials: false
 
       - name: Install MoonBit
         run: |
